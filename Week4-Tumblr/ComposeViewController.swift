@@ -70,7 +70,7 @@ class ComposeViewController: UIViewController {
             neverMindButtonOY
         ]
         
-        var delay = 0.0
+        var buttonDelay = 0.0
         var OYIndex = 0
         
         for buttons in composeButtons {
@@ -78,7 +78,7 @@ class ComposeViewController: UIViewController {
             UIView.animateWithDuration(
                 
                 0.3,
-                delay: delay,
+                delay: buttonDelay,
                 usingSpringWithDamping: 0.8,
                 initialSpringVelocity: 0.1,
                 options: UIViewAnimationOptions.CurveEaseIn,
@@ -92,7 +92,7 @@ class ComposeViewController: UIViewController {
             
             )
             
-            delay += 0.07
+            buttonDelay += 0.07
             OYIndex += 1
             
         }
@@ -123,8 +123,6 @@ class ComposeViewController: UIViewController {
             quoteButton,
             linkButton,
             chatButton,
-
-            
         ]
         
         var buttonDelay = 0.0
@@ -143,7 +141,7 @@ class ComposeViewController: UIViewController {
                     buttons.frame.origin.y = 567
                     buttons.alpha = 0
                 },
-                
+
                 completion: nil
                 
             )
@@ -151,6 +149,7 @@ class ComposeViewController: UIViewController {
             buttonDelay += 0.07
             
         }
+        
         
         delay(0.4) { () -> () in
             self.dismissViewControllerAnimated(true, completion: nil)
